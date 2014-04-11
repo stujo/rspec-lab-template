@@ -56,13 +56,19 @@ puts "=" * 80
 puts "Benchmarking"
 puts "=" * 80
 
-test_data = (1..100).map do
+test_data = (1..25).map do
   big_O_unsorted_numbers 3000
 end
 
+small_test_data = (1..2000).map do
+  big_O_unsorted_numbers 30
+end
+
 Benchmark.benchmark(CAPTION, 7, FORMAT, ">total:", ">avg:") do |x|
-  x.report("mergesort") { test_data.each { |data| big_O_N_log_N_merge_sort(data) } }
-  x.report("bubblesort") { test_data.each { |data| big_O_N_squared_bubble_sort(large_unsorted_numbers) } }
+  x.report("mergesort(small)") { small_test_data.each { |data| big_O_N_log_N_merge_sort(data) } }
+  x.report("bubblesort(small)") { small_test_data.each { |data| big_O_N_squared_bubble_sort(data) } }
+  x.report("mergesort(large)") { test_data.each { |data| big_O_N_log_N_merge_sort(data) } }
+  x.report("bubblesort(large)") { test_data.each { |data| big_O_N_squared_bubble_sort(data) } }
 end
 
 puts "=" * 80
