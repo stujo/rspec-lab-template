@@ -1,4 +1,6 @@
-No examples found.
 
-Finished in 0.00005 seconds
-0 examples, 0 failures
+RSpec Config
+  is running ok
+
+Finished in 0.0007 seconds
+1 example, 0 failures

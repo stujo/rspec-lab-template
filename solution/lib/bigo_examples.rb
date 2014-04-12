@@ -174,8 +174,3 @@ def big_O_N_log_N_merge_sort(unsorted_numbers)
   merge_sort unsorted_numbers
 end
 
-
-def big_O_2_power_N_not_sure_yet(unsorted_numbers)
-#TODO
-end
-
